@@ -1,6 +1,12 @@
-# weather_app
+# Weather App
+
+A simple weather app written using nuxt and openweathermap api.
 
 ## Build Setup
+
+The api key can be obtain by registering at [openweathermap](https://openweathermap.org/) web site
+
+Add an .env file on the project root following the example file
 
 ```bash
 # install dependencies
@@ -16,5 +22,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
