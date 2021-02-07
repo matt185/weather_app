@@ -3,7 +3,7 @@
     <h1 class="text-caption-h1 d-flex justify-center">Weather App</h1>
     <v-flex>
       <v-card color="blue-grey darken-2">
-        <v-card-text>card</v-card-text>
+        <v-card-text>{{weather.name}}</v-card-text>
       </v-card>
     </v-flex>
     <v-flex class="d-flex justify-center mt-4">
@@ -18,8 +18,17 @@
 export default {
   data() {
     return {
-      city: ""
+      city: "London"
     };
+  },
+  asyncData({ params, $axios }) {
+    return $axios
+      .$get(
+        `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${process.env.ApiKey}`
+      )
+      .then(res => {
+        return { weather: res };
+      });
   }
 };
 </script>
